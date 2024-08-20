@@ -20,6 +20,8 @@ Funcionalidades principales:
 Técnologías a utilizar: 
 Para la creación de este software, además de la parte digital que sería el uso de Android Studio para la formación de la lógica del programa, se usarán componentes de hardware como la Pantalla Tactil del dispositivo, los componentes que permiten la conexión a Internet por medio de Wi-Fi, y el sistema de Almacenamiento Interno donde se guardarán todas las preguntas realizadas y el feedback generado. 
 
+https://miro.com/app/board/uXjVKnk5oSE=/?share_link_id=389375281364
+
 Equipo de desarrollo:
 Nuestro equipo de desarrollo está conformado por...
 - Emmanuel Quintero Gil
