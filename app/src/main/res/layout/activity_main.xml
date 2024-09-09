@@ -25,7 +25,7 @@
             android:text="Prueba Técnica de Software"
             android:textColor="@color/white"
             android:textAlignment="center"
-            android:textSize="44dp"
+            android:textSize="45dp"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
             android:textAllCaps="true"
