@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prueba Técnica de Software"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="45dp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="¡Bienvenido a la Prueba Técnica de Software! Responde las siguientes preguntas con mucha atención."
+                android:textAlignment="center"
+                android:textSize="25dp"/>
+
+
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. ¿Qué haces si un código no está documentado?"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Lo documento yo mismo."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Solicito ayuda al programador original."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Trabajo con el código así tal cual."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. ¿Qué lenguaje escogerías si tuvieses que trabajar con Bases de Datos?"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Oracle/MySQL."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Java."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Kotlin."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. ¿Cómo prefieres declarar las variables de un código?"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"/>
+
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Públicas."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Privadas."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Protegidas."
+                    android:textSize="19dp"
+                    android:padding="10dp"/>
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
