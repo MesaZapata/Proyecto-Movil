@@ -27,3 +27,6 @@ Nuestro equipo de desarrollo está conformado por...
 - Emmanuel Quintero Gil
 - Samuel Mesa Zapata
 - Brandon Ramirez Bedoya
+
+## Rama Master:
+Por medio de la Rama Master encontrarás uno de los diseños pensandos para esta aplicación, en este caso el diseño de un formulario de preguntas básico. 
