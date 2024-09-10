@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProyectoMovil</string>
+    <string name="title_activity_main_page">main_page</string>
+    <string name="title_activity_form_page">FormPage</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_candidates_review_page">CandidatesReviewPage</string>
 </resources>
