@@ -61,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Solicito ayuda al programador original."
+                    android:text="Solicito ayuda los programadores originales."
                     android:textSize="19dp"
                     android:padding="10dp"/>
                 <RadioButton
