@@ -16,12 +16,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.ui.text.style.TextAlign
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 val CustomBlue = Color(0xFF3F51B5)
 val BackgroundColor = Color(0xFF2E3140)
 
 @Composable
-fun CandidatesList() {
+fun CandidatesList(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -113,7 +115,7 @@ fun CandidatesList() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Button(
-                    onClick = { },
+                    onClick = { navController.navigate("candidatesReviewPage") },
                     colors = ButtonDefaults.buttonColors(containerColor = CustomBlue),
                     modifier = Modifier
                         .width(170.dp)
@@ -247,5 +249,5 @@ fun CandidatesItem(name: String, status: String) {
 @Preview(showBackground = true)
 @Composable
 fun CandidatesListPreview() {
-    CandidatesList()
+    CandidatesList(rememberNavController())
 }
