@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".FormPage"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_form_page"
             android:theme="@style/Theme.ProyectoMovil" />
         <activity
