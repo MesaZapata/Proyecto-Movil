@@ -17,6 +17,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.proyectomovil.ui.theme.ProyectoMovilTheme
 
 //Colores propios
@@ -24,7 +26,7 @@ val CustomBlue = Color(0xFF3F51B5)
 val BackgroundColor = Color(0xFF2E3140)
 
 @Composable
-fun Form() {
+fun Form(navController: NavController) {
 
     //Apilador de elementos
     Box(
@@ -178,7 +180,7 @@ fun Form() {
 
                             //Botón para enviar respuestas
                             Button(
-                                onClick = {},
+                                onClick = {navController.navigate("candidatesReviewPage")},
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(top = 16.dp)
@@ -197,6 +199,6 @@ fun Form() {
 @Composable
 fun FormPagePreview() {
     ProyectoMovilTheme {
-        Form()
+        Form(rememberNavController())
     }
 }

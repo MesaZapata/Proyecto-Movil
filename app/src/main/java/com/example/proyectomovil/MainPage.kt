@@ -132,7 +132,7 @@ fun CandidatesList(navController: NavController) {
                 }
 
                 Button(
-                    onClick = { },
+                    onClick = {navController.navigate("candidatesForm")},
                     colors = ButtonDefaults.buttonColors(containerColor = CustomBlue),
                     modifier = Modifier
                         .width(170.dp)
@@ -140,7 +140,7 @@ fun CandidatesList(navController: NavController) {
                     shape = RoundedCornerShape(16.dp)
                 ) {
                     Text(
-                        "Ver estadisticas",
+                        "Ver preguntas",
                         color = Color.White,
                         fontSize = 14.sp,
                         maxLines = 2,

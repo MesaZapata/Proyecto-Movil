@@ -33,5 +33,8 @@ fun AppNavigation() {
         composable("candidatesReviewPage") {
             OutlinedCardExample(navController = navController)
         }
+        composable("candidatesForm") { 
+            Form(navController = navController)
+        }
     }
 }
