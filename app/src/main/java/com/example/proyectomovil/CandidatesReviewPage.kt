@@ -16,6 +16,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.ui.text.font.FontWeight
 import com.example.proyectomovil.ui.theme.ProyectoMovilTheme
 
 class CandidatesReviewPage : ComponentActivity() {
@@ -36,15 +37,25 @@ class CandidatesReviewPage : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OutlinedCardExample(navController: NavController) {
-    var selectedUser by remember { mutableStateOf("Seleccionar Usuario") }
+fun OutlinedCardExample(
+    navController: NavController,
+    respuesta1: String? = null,
+    respuesta2: String? = null,
+    respuesta3: String? = null,
+    respuesta4: String? = null,
+    respuesta5: String? = null
+) {
+    var selectedUser by remember { mutableStateOf("Usuario 1") } // Usuario predeterminado
     val users = listOf("Usuario 1", "Usuario 2", "Usuario 3", "Usuario 4", "Usuario 5")
     val responses = mapOf(
-        "Usuario 1" to "Esta es la respuesta del Usuario 1.",
-        "Usuario 2" to "Esta es la respuesta del Usuario 2.",
-        "Usuario 3" to "Esta es la respuesta del Usuario 3.",
-        "Usuario 4" to "Esta es la respuesta del Usuario 4.",
-        "Usuario 5" to "Esta es la respuesta del Usuario 5."
+        "Usuario 1" to listOf(
+            "1. ¿Qué haces si un código no está documentado?" to (respuesta1 ?: "Respuesta no disponible"),
+            "2. ¿Qué lenguaje escogerías para trabajar en bases de datos y por qué?" to (respuesta2 ?: "Respuesta no disponible"),
+            "3. Cuando declaras variables, ¿bajo qué términos prefieres crearlas?" to (respuesta3 ?: "Respuesta no disponible"),
+            "4. ¿Bajo qué rol te desempeñas mejor en el desarrollo de proyectos y por qué?" to (respuesta4 ?: "Respuesta no disponible"),
+            "5. Cuando desarrollas software, ¿qué es lo más importante a tener en cuenta y por qué?" to (respuesta5 ?: "Respuesta no disponible")
+        )
+        // Otros usuarios pueden tener respuestas en el futuro
     )
 
     Scaffold(
@@ -72,6 +83,7 @@ fun OutlinedCardExample(navController: NavController) {
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
+            // Botones de selección de usuarios
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -91,6 +103,7 @@ fun OutlinedCardExample(navController: NavController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
+            // Tarjeta para mostrar las respuestas del usuario seleccionado
             OutlinedCard(
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.surface,
@@ -102,84 +115,33 @@ fun OutlinedCardExample(navController: NavController) {
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
-                        text = "Respuesta:",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(bottom = 8.dp)
-                    )
-                    Text(
-                        text = responses[selectedUser] ?: "Selecciona un usuario para ver la respuesta",
-                        textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.bodyLarge,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            OutlinedCard(
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surface,
-                ),
-                border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
-                modifier = Modifier
-                    .padding(16.dp)
-                    .fillMaxWidth()
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        text = "Información adicional:",
+                        text = "Respuestas de $selectedUser:",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
 
-                    TextField(
-                        value = "",
-                        onValueChange = {},
-                        label = { Text("Nombre") },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                    )
-
-                    TextField(
-                        value = "",
-                        onValueChange = {},
-                        label = { Text("Fecha") },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                    )
-
-                    TextField(
-                        value = "",
-                        onValueChange = {},
-                        label = { Text("Feedback Final") },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                    )
-
-                    TextField(
-                        value = "",
-                        onValueChange = {},
-                        label = { Text("Puntuación") },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 8.dp)
-                    )
+                    // Mostrar las respuestas del usuario seleccionado
+                    responses[selectedUser]?.forEach { (question, answer) ->
+                        Text(
+                            text = question,
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.padding(bottom = 4.dp)
+                        )
+                        Text(
+                            text = answer,
+                            textAlign = TextAlign.Start,
+                            style = MaterialTheme.typography.bodyLarge,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 12.dp)
+                        )
+                    }
                 }
             }
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ProyectoMovilTheme {
-        OutlinedCardExample(rememberNavController())
-    }
-}
