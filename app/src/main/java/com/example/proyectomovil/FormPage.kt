@@ -21,28 +21,24 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.proyectomovil.ui.theme.ProyectoMovilTheme
 
-//Colores propios
 val CustomBlue = Color(0xFF3F51B5)
 val BackgroundColor = Color(0xFF2E3140)
 
 @Composable
 fun Form(navController: NavController) {
 
-    // Apilador de elementos
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(BackgroundColor)
     ) {
 
-        // Columna vertical
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
 
-            // Tarjeta de color blanco donde irán las preguntas
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -57,7 +53,6 @@ fun Form(navController: NavController) {
                         .fillMaxWidth()
                 ) {
 
-                    // Título de prueba
                     Text(
                         text = "PRUEBA TÉCNICA DEL SOFTWARE",
                         fontSize = 22.sp,
@@ -65,20 +60,17 @@ fun Form(navController: NavController) {
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
 
-                    // Variables de respuestas del usuario
                     var respuesta1 by remember { mutableStateOf("") }
                     var respuesta2 by remember { mutableStateOf("") }
                     var respuesta3 by remember { mutableStateOf("") }
                     var respuesta4 by remember { mutableStateOf("") }
                     var respuesta5 by remember { mutableStateOf("") }
 
-                    // Agregar el formulario con preguntas
                     LazyColumn(
                         modifier = Modifier
                             .fillMaxWidth()
                     ) {
                         item {
-                            // Pregunta 1
                             Text(
                                 text = "1. ¿Qué haces si un código no está documentado?",
                                 fontSize = 18.sp,
@@ -98,7 +90,6 @@ fun Form(navController: NavController) {
                                 )
                             )
 
-                            // Pregunta 2
                             Text(
                                 text = "2. ¿Qué lenguaje escogerías para trabajar en bases de datos y por qué?",
                                 fontSize = 18.sp,
@@ -118,7 +109,6 @@ fun Form(navController: NavController) {
                                 )
                             )
 
-                            // Pregunta 3
                             Text(
                                 text = "3. Cuando declaras variables, ¿bajo qué términos prefieres crearlas?",
                                 fontSize = 18.sp,
@@ -138,7 +128,6 @@ fun Form(navController: NavController) {
                                 )
                             )
 
-                            // Pregunta 4
                             Text(
                                 text = "4. ¿Bajo qué rol te desempeñas mejor en el desarrollo de proyectos y por qué?",
                                 fontSize = 18.sp,
@@ -158,7 +147,6 @@ fun Form(navController: NavController) {
                                 )
                             )
 
-                            // Pregunta 5
                             Text(
                                 text = "5. Cuando desarrollas software, ¿qué es lo más importante a tener en cuenta y por qué?",
                                 fontSize = 18.sp,
@@ -178,10 +166,8 @@ fun Form(navController: NavController) {
                                 )
                             )
 
-                            // Botón para enviar respuestas
                             Button(
                                 onClick = {
-                                    // Navegar con los datos de respuestas como argumentos
                                     navController.navigate(
                                         "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
                                     )

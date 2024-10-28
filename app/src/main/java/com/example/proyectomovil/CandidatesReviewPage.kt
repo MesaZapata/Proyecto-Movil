@@ -55,7 +55,6 @@ fun OutlinedCardExample(
             "4. ¿Bajo qué rol te desempeñas mejor en el desarrollo de proyectos y por qué?" to (respuesta4 ?: "Respuesta no disponible"),
             "5. Cuando desarrollas software, ¿qué es lo más importante a tener en cuenta y por qué?" to (respuesta5 ?: "Respuesta no disponible")
         )
-        // Otros usuarios pueden tener respuestas en el futuro
     )
 
     Scaffold(
@@ -103,7 +102,6 @@ fun OutlinedCardExample(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Tarjeta para mostrar las respuestas del usuario seleccionado
             OutlinedCard(
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.surface,
@@ -121,7 +119,6 @@ fun OutlinedCardExample(
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
 
-                    // Mostrar las respuestas del usuario seleccionado
                     responses[selectedUser]?.forEach { (question, answer) ->
                         Text(
                             text = question,
