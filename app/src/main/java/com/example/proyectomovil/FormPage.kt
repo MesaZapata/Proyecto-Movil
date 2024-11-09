@@ -1,5 +1,6 @@
 package com.example.proyectomovil
 
+import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,6 +12,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -25,7 +28,8 @@ val CustomBlue = Color(0xFF3F51B5)
 val BackgroundColor = Color(0xFF2E3140)
 
 @Composable
-fun Form(navController: NavController) {
+fun Form(navController: NavController, context: Context = LocalContext.current) {
+
 
     Box(
         modifier = Modifier
@@ -166,11 +170,27 @@ fun Form(navController: NavController) {
                                 )
                             )
 
+                            val databaseHelper = remember { DatabaseHelper(context) }
                             Button(
                                 onClick = {
-                                    navController.navigate(
-                                        "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
+                                    // Guardar en la base de datos
+                                    val id = databaseHelper.insertResponse(
+                                        respuesta1 = respuesta1,
+                                        respuesta2 = respuesta2,
+                                        respuesta3 = respuesta3,
+                                        respuesta4 = respuesta4,
+                                        respuesta5 = respuesta5
                                     )
+
+                                    // Si el guardado fue exitoso, navegar a la siguiente pantalla
+                                    if (id != -1L) {
+                                        navController.navigate(
+                                            "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
+                                        )
+                                    } else {
+                                        // Manejar el error, por ejemplo mostrando un mensaje
+                                        // Puedes usar un SnackBar para esto
+                                    }
                                 },
                                 modifier = Modifier
                                     .fillMaxWidth()
