@@ -173,7 +173,6 @@ fun Form(navController: NavController, context: Context = LocalContext.current) 
                             val databaseHelper = remember { DatabaseHelper(context) }
                             Button(
                                 onClick = {
-                                    // Guardar en la base de datos
                                     val id = databaseHelper.insertResponse(
                                         respuesta1 = respuesta1,
                                         respuesta2 = respuesta2,
@@ -182,14 +181,11 @@ fun Form(navController: NavController, context: Context = LocalContext.current) 
                                         respuesta5 = respuesta5
                                     )
 
-                                    // Si el guardado fue exitoso, navegar a la siguiente pantalla
                                     if (id != -1L) {
                                         navController.navigate(
                                             "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
                                         )
                                     } else {
-                                        // Manejar el error, por ejemplo mostrando un mensaje
-                                        // Puedes usar un SnackBar para esto
                                     }
                                 },
                                 modifier = Modifier
