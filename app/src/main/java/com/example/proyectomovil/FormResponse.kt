@@ -8,3 +8,13 @@ class FormResponse(
     val respuesta4: String,
     val respuesta5: String
 )
+
+class FormLanguage(
+    val id: Int,
+    val respuesta2: String
+)
+
+class FormRoles(
+    val id: Int,
+    val respuesta4: String
+)

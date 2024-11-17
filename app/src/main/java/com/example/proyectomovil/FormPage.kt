@@ -181,7 +181,29 @@ fun Form(navController: NavController, context: Context = LocalContext.current) 
                                         respuesta5 = respuesta5
                                     )
 
+                                    val id2 = databaseHelper.insertLanguage(
+                                        respuesta2 = respuesta2
+                                    )
+
+                                    val id3 = databaseHelper.insertRoles(
+                                        respuesta4 = respuesta4
+                                    )
+
                                     if (id != -1L) {
+                                        navController.navigate(
+                                            "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
+                                        )
+                                    } else {
+                                    }
+
+                                    if (id2 != -1L) {
+                                        navController.navigate(
+                                            "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
+                                        )
+                                    } else {
+                                    }
+
+                                    if (id3 != -1L) {
                                         navController.navigate(
                                             "candidatesReviewPage?respuesta1=${respuesta1}&respuesta2=${respuesta2}&respuesta3=${respuesta3}&respuesta4=${respuesta4}&respuesta5=${respuesta5}"
                                         )
